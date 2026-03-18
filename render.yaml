@@ -1,0 +1,23 @@
+services:
+  # Servicio para el Backend (Node.js)
+  - type: web
+    name: queteregalo - backend
+    runtime: node
+    plan: free # o tu plan actual
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node index.js # Cambia index.js por tu archivo principal
+    envVars:
+      - key: NODE_VERSION
+        value: 18.0.0 # Ajusta a tu versión
+      # Aquí puedes añadir tus variables de entorno si son públicas
+      # o configurarlas manualmente en el dashboard para mayor seguridad.
+
+  # Servicio para el Frontend (React/Vite/Vue)
+  - type: web
+    name: queteregalo-frontend
+    runtime: static
+    plan: free
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    publishPath: dist # Cambia a 'build' si usas Create React App
