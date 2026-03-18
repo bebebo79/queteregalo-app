@@ -20,4 +20,4 @@ services:
     plan: free
     rootDir: frontend
     buildCommand: npm install && npm run build
-    publishPath: dist # Cambia a 'build' si usas Create React App
+    staticPublishPath: dist # Cambia a 'build' si usas Create React App
